@@ -1,0 +1,43 @@
+#index{
+    padding-top: 15%;
+    background: linear-gradient(to right, #23CF5F, #42a5f5 );
+}
+
+#secure {
+    background: linear-gradient(to right, #23CF5F, #42a5f5 );
+}
+
+#home, #search-page {
+    text-align: center;
+    font-family: "Montserrat", "Arial";
+    color: white;
+    font-size: 100%;
+}
+
+#query {
+    width: 50%;
+    background-color: white;
+}
+
+p {
+    text-align: center;
+    font-family: "Montserrat", "Arial";
+    color: #424242;
+}
+
+a:link, a:visited {
+    color: #42a5f5;
+}
+
+#search-form, .form-control {
+    margin-bottom: 20px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="img/vinyl.ico"/>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Crate Looter</title>
+</head>
+<body id="secure">
+    <h1 id="search-page" style="font-size:400%">Crate Looter</h1>
+    <div>
+        <form id="search-form">
+            <center><input type="text" id="query" placeholder="Search for an artist" class="form-control" /></center>
+            <center><input type="submit" id="search" class="waves-effect waves-light btn green" value="Search" /></center>
+        </form>
+        <a class="modal-trigger" href="#modal1" id="cover"><div id="results1"></div></a>
+        <!-- HTML for modal content -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div id="results2"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script id="results-template1">
+    <center>
+        <div>
+            {{#each albums.items}}
+                <img src={{images.0.url}} album-id="{{id}}">
+            {{/each}}
+        </div>
+    </center>
+</script>
+<script id="results-template2">
+    <div>
+        <center>
+            <img src={{images.0.url}}>
+            <h3>{{name}}</h3>
+            <p>Artist: <a href="https://en.wikipedia.org/wiki/{{artists.0.name}}">{{artists.0.name}}</a></p>
+            <p>Release Date: {{release_date}}</p>
+            <p>Spotify ID: {{id}}</p>
+            <p>Record Label: {{label}}</p>
+        </center>
+    </div>
+</script>
+<script>
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+</script>
+</html>
